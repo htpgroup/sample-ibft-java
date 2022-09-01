@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Product Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<form action="/confirm" method="post" id="post_form" th:object="${confirm}" >
+
+    <div class="container container-table">
+        <div class=" row vertical-center-row">
+
+            <div class="col-3" style="word-wrap: break-word;">
+                <p th:text=" ${json}"  style="white-space: pre"></p>
+                <input type="hidden" th:value="${cashoutRequest.merchantId}" th:attr="name='merchantId'"/>
+                <input type="hidden" th:value="${cashoutRequest.merchantEmail}" th:attr="name='merchantEmail'"/>
+                <input type="hidden" th:value="${cashoutRequest.requestId}" th:attr="name='requestId'"/>
+                <input type="hidden" th:value="${cashoutRequest.bankName}" th:attr="name='bankName'"/>
+                <input type="hidden" th:value="${cashoutRequest.bankAccountNumber}" th:attr="name='bankAccountNumber'"/>
+                <input type="hidden" th:value="${cashoutRequest.bankAccountName}" th:attr="name='bankAccountName'"/>
+                <input type="hidden" th:value="${cashoutRequest.amount}" th:attr="name='amount'"/>
+                <input type="hidden" th:value="${cashoutRequest.note}" th:attr="name='note'"/>
+                <input type="hidden" th:value="${cashoutRequest.timeTranfer}" th:attr="name='timeTranfer'"/>
+                <input type="hidden" th:value="${cashoutRequest.channelId}" th:attr="name='channelId'"/>
+                <input type="hidden" th:value="${cashoutRequest.secureChain}" th:attr="name='secureChain'"/>
+                <input type="hidden" th:value="${cashoutRequest.passcode}" th:attr="name='passcode'"/>
+            </div>
+
+            <div class="col-12 mt-4">
+                <button class="btn btn-primary mt-2 animate-up-2" type="submit">Confirm</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

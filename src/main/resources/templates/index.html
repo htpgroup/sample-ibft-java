@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Product Manager</title>
+    <!--    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css}" />-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<form action="/cashoutRequest" method="post" id="post_form" class="card border-0 shadow p-3 pb-4 mb-4">
+    <div class="container container-table">
+        <div class=" row vertical-center-row">
+            <div class="row col-xs-12">
+                <div class="col-xs-3 form-group field-name">
+                    <label class="form-label">
+                        <span class="small text-dark">Chọn merchant</span>
+                    </label>
+                    <div class="form-group">
+                        <select class="form-control" id="merchantId" name="merchantId" aria-label="Select Value"
+                                required="">
+                            <option value="">Chọn merchant</option>
+                            <option value="64875">hello-kitty.com.vn</option>
+                        </select>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-4 form-group field-name">
+                    <label class="form-label">
+                        <span class="small text-dark">Email</span>
+                    </label>
+                    <div class="input-group">
+                        <input class="form-control" autocomplete="off" id="merchantEmail" name="merchantEmail"
+                               placeholder="Email" type="text" required="">
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-5 form-group field-name">
+                    <label class="form-label">
+                        <span class="small text-dark">passcode</span>
+                    </label>
+                    <div class="input-group">
+                        <input class="form-control" autocomplete="off" id="passcode" name="passcode"
+                               placeholder="passcode" type="text">
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row col-xs-12">
+                <div class="col-xs-6 form-group field-name">
+                    <label class="form-label">
+                        <span class="small text-dark">Ngân hàng</span>
+                    </label>
+                    <div class="form-group">
+                        <select class="form-control" id="bankName" name="bankName"
+                                aria-label="Country select example" data-select2-id="select2-data-bank" tabindex="-1"
+                                aria-hidden="true">
+                            <option selected="selected" value="">Chọn ngân hàng...</option>
+                            <option value="ABB" selected="" data-select2-id="select2-data-2-t95g">ABB - Ngân hàng TMCP
+                                An
+                                Bình
+                            </option>
+                            <option value="ACB">ACB - Ngân hàng TMCP Á Châu</option>
+                            <option value="BAB">BAB - Ngân hàng TMCP Bắc Á</option>
+                            <option value="BIDV">BIDV - Ngân hàng TMCP Đầu tư và Phát triển Việt Nam</option>
+                            <option value="BVB">BVB - Ngân hàng TMCP Bảo Việt</option>
+                            <option value="CAKE">CAKE - TMCP Việt Nam Thịnh Vượng - Ngân hàng số CAKE by VPBank</option>
+                            <option value="CBB">CBB - Ngân hàng Thương mại TNHH MTV Xây dựng Việt Nam</option>
+                            <option value="CIMB">CIMB - Ngân hàng TNHH MTV CIMB Việt Nam</option>
+                            <option value="COOPBANK">COOPBANK - Ngân hàng Hợp tác xã Việt Nam</option>
+                            <option value="DAB">DAB - Ngân hàng TMCP Đại Á - DaiA Bank</option>
+                            <option value="DBS">DBS - DBS Bank Ltd - Chi nhánh Thành phố Hồ Chí Minh</option>
+                            <option value="DOB">DOB - Ngân hàng TMCP Đông Á</option>
+                            <option value="EIB">EIB - Ngân hàng TMCP Xuất Nhập khẩu Việt Nam</option>
+                            <option value="GPB">GPB - Ngân hàng Thương mại TNHH MTV Dầu Khí Toàn Cầu</option>
+                            <option value="HDB">HDB - Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh</option>
+                            <option value="HLBVN">HLBVN - Ngân hàng TNHH MTV Hong Leong Việt Nam</option>
+                            <option value="HSBC">HSBC - Ngân hàng TNHH MTV HSBC (Việt Nam)</option>
+                            <option value="IBK - HCM">IBK - HCM - Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh TP.
+                                Hồ
+                                Chí Minh
+                            </option>
+                            <option value="IBK - HN">IBK - HN - Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội
+                            </option>
+                            <option value="ICB">ICB - Ngân hàng TMCP Công thương Việt Nam</option>
+                            <option value="IVB">IVB - Ngân hàng TNHH Indovina</option>
+                            <option value="KBHCM">KBHCM - Ngân hàng Kookmin - Chi nhánh Thành phố Hồ Chí Minh</option>
+                            <option value="KBHN">KBHN - Ngân hàng Kookmin - Chi nhánh Hà Nội</option>
+                            <option value="KBank">KBank - Ngân hàng Đại chúng TNHH Kasikornbank</option>
+                            <option value="KLB">KLB - Ngân hàng TMCP Kiên Long</option>
+                            <option value="LPB">LPB - Ngân hàng TMCP Bưu Điện Liên Việt</option>
+                            <option value="MB">MB - Ngân hàng TMCP Quân đội</option>
+                            <option value="MSB">MSB - Ngân hàng TMCP Hàng Hải</option>
+                            <option value="NAB">NAB - Ngân hàng TMCP Nam Á</option>
+                            <option value="NCB">NCB - Ngân hàng TMCP Quốc Dân</option>
+                            <option value="NHB HN">NHB HN - Ngân hàng Nonghyup - Chi nhánh Hà Nội</option>
+                            <option value="OCB">OCB - Ngân hàng TMCP Phương Đông</option>
+                            <option value="Oceanbank">Oceanbank - Ngân hàng Thương mại TNHH MTV Đại Dương</option>
+                            <option value="PBVN">PBVN - Ngân hàng TNHH MTV Public Việt Nam</option>
+                            <option value="PGB">PGB - Ngân hàng TMCP Xăng dầu Petrolimex</option>
+                            <option value="PVCB">PVCB - Ngân hàng TMCP Đại Chúng Việt Nam</option>
+                            <option value="SCB">SCB - Ngân hàng TMCP Sài Gòn</option>
+                            <option value="SCVN">SCVN - Ngân hàng TNHH MTV Standard Chartered Bank Việt Nam</option>
+                            <option value="SEAB">SEAB - Ngân hàng TMCP Đông Nam Á</option>
+                            <option value="SGICB">SGICB - Ngân hàng TMCP Sài Gòn Công Thương</option>
+                            <option value="SHB">SHB - Ngân hàng TMCP Sài Gòn - Hà Nội</option>
+                            <option value="SHBVN">SHBVN - Ngân hàng TNHH MTV Shinhan Việt Nam</option>
+                            <option value="STB">STB - Ngân hàng TMCP Sài Gòn Thương Tín</option>
+                            <option value="TCB">TCB - Ngân hàng TMCP Kỹ thương Việt Nam</option>
+                            <option value="TPB">TPB - Ngân hàng TMCP Tiên Phong</option>
+                            <option value="UOB">UOB - Ngân hàng United Overseas - Chi nhánh TP. Hồ Chí Minh</option>
+                            <option value="Ubank">Ubank - TMCP Việt Nam Thịnh Vượng - Ngân hàng số Ubank by VPBank
+                            </option>
+                            <option value="VAB">VAB - Ngân hàng TMCP Việt Á</option>
+                            <option value="VBA">VBA - Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam</option>
+                            <option value="VCB">VCB - Ngân hàng TMCP Ngoại Thương Việt Nam</option>
+                            <option value="VCCB">VCCB - Ngân hàng TMCP Bản Việt</option>
+                            <option value="VIB">VIB - Ngân hàng TMCP Quốc tế Việt Nam</option>
+                            <option value="VIETBANK">VIETBANK - Ngân hàng TMCP Việt Nam Thương Tín</option>
+                            <option value="VPB">VPB - Ngân hàng TMCP Việt Nam Thịnh Vượng</option>
+                            <option value="VRB">VRB - Ngân hàng Liên doanh Việt - Nga</option>
+                            <option value="WVN">WVN - Ngân hàng TNHH MTV Woori Việt Nam</option>
+                        </select>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-xs-12">
+                    <div class="col-xs-6 form-group field-name">
+                        <label class="form-label" for="cardNameLabel">
+                            <span class="small text-dark">(Họ và tên khách hàng)</span>
+                        </label>
+                        <div class="input-group">
+                            <input class="form-control" autocomplete="off" id="cardNameLabel" name="bankAccountName"
+                                   placeholder="Tên khách hàng *" type="text" required="">
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row col-xs-12">
+                    <div class="col-xs-3">
+                        <label>Số tài khoản <span class="text-danger">*</span>
+                        </label>
+                        <div class="input-group field-number">
+
+                            <input class="form-control" id="bankAccountNumber" name="bankAccountNumber" placeholder=" "
+                                   type="text"
+                                   required="" maxlength="24">
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-3">
+                        <div class="form-group field-amount">
+                            <label>Số tiền (VNĐ)<span class="text-danger">*</span>
+                            </label>
+                            <input class="form-control" id="cardAmount" name="amount" min="1" placeholder="Số tiền"
+                                   type="text" required="" maxlength="19">
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <label for="cardExpiryLabel">Ngày chuyển <span class="text-danger">*</span>
+                        </label>
+                        <div class="input-group field-date">
+                            <input class="form-control " id="cardExpiryLabel" name="date" placeholder="DD/MM/YYYY"
+                                   type="text"
+                                   required="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-12 mb-4 mb-lg-0">
+                    <div class="form-group">
+                        <label for="cardNoteLabel">Nội dung chuyển <span class="text-danger">*</span>
+                        </label>
+                        <textarea class="form-control" name="note" id="cardNoteLabel" placeholder="Nội dung chuyển"
+                                  type="text"
+                                  required=""></textarea>
+                        <div class="valid-feedback">
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-xs-12">
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" style="margin-left: 15px;">Thêm mới</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!--<script>-->
+<!--    $(document).ready(function () {-->
+
+<!--        //set on change listener-->
+<!--        $('#merchantId').change(getContent);-->
+
+<!--        function getContent() {-->
+
+<!--            var merchantId = $('#merchantId').val();-->
+
+
+<!--            $.ajax({-->
+<!--                type: "GET",-->
+<!--                url: "getPassCode",-->
+<!--                data: "merchantId=" + merchantId,-->
+<!--                cache: false,-->
+<!--                timeout: 600000,-->
+<!--                success: function (data) {-->
+<!--                    $('#passcode').val(data);-->
+<!--                },-->
+<!--                error: function (e) {-->
+<!--                    $('#passcode').val("");-->
+<!--                }-->
+<!--            });-->
+
+<!--        }-->
+<!--    })-->
+<!--</script>-->
+</body>
+</html>
